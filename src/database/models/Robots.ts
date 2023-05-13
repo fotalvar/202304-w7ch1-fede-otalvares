@@ -5,7 +5,7 @@ const robotSchema = new Schema({
   image: String,
   speed: Number,
   resilience: Number,
-  creationDate: Date,
+  creationDate: String,
 });
 
 const Robot = model("Robot", robotSchema, "robots");
