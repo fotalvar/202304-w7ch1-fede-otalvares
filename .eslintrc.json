@@ -16,7 +16,13 @@
         "no-unused-vars": "error",
         "no-console": "error",
         "no-new": 0,
-        "@typescript-eslint/naming-convention": "off"
+        "@typescript-eslint/naming-convention": "off",
+        "new-cap": [
+          "error",
+          {
+            "capIsNewExceptions": ["Router"]
+          }
+        ]
       }
     },
     {

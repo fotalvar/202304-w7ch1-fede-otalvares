@@ -1,5 +1,5 @@
 import { type Request, type Response } from "express";
-import Robot from "../../database/models/Robots";
+import Robot from "../../database/models/Robots.js";
 
 export const getRobots = async (req: Request, res: Response) => {
   try {
