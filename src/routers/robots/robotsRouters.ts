@@ -8,6 +8,6 @@ const robotsRouter = Router();
 
 robotsRouter.get("/", getRobots);
 
-robotsRouter.get("/robots/:idRobot", getRobot);
+robotsRouter.get("/:idRobot", getRobot);
 
 export default robotsRouter;
