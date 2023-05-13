@@ -1,6 +1,6 @@
 import { Types } from "mongoose";
 
-interface robotMockSructure {
+interface RobotMockSructure {
   _id: Types.ObjectId;
   name: string;
   image: string;
@@ -9,7 +9,7 @@ interface robotMockSructure {
   creationDate: string;
 }
 
-const robotsMock: robotMockSructure[] = [
+const robotsMock: RobotMockSructure[] = [
   {
     _id: new Types.ObjectId(),
     name: "r2d2",
