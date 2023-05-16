@@ -5,6 +5,7 @@ import {
   genericError,
   notFoundError,
 } from "../middlewares/errorMiddlewares.js";
+import { auth } from "../middlewares/authMiddleware.js";
 
 const app = express();
 
@@ -18,7 +19,7 @@ app.disable("x-powered-by");
 app.use(morgan("dev"));
 app.use(express.json());
 
-app.use("/robots", robotsRouter);
+app.use("/robots", auth, robotsRouter);
 
 app.use(notFoundError);
 app.use(genericError);
