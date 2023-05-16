@@ -1,9 +1,9 @@
+import bcrypt from "bcryptjs";
 import { type Response, type NextFunction } from "express";
 import jwt, { type JwtPayload } from "jsonwebtoken";
 import RobotError from "../../routers/RobotError.js";
-import { User } from "../../database/user/User.js";
-import bcrypt from "bcryptjs";
 import type UserCredencialAlias from "../../server/types";
+import User from "../../database/user/User.js";
 
 export const loginUser = async (
   req: UserCredencialAlias,
@@ -13,12 +13,10 @@ export const loginUser = async (
   const { username, password } = req.body;
 
   try {
-    const user = await User.findOne({ username, password });
-
+    const user = await User.findOne({ username });
     if (!user || !(await bcrypt.compare(password, user.password))) {
-      const robotError = new RobotError(401, "Wrong credentials");
-
-      throw robotError;
+      const authError = new RobotError(401, "Wrong credentials");
+      throw authError;
     }
 
     const tokenPayload: JwtPayload = {
