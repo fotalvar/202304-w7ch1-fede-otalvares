@@ -1,14 +1,9 @@
-import { type Request, type Response, type NextFunction } from "express";
+import { type Response, type NextFunction } from "express";
 import jwt, { type JwtPayload } from "jsonwebtoken";
 import RobotError from "../../routers/RobotError";
 import { User } from "../../database/user/User";
 import bcrypt from "bcryptjs";
-
-type UserCredencialAlias = Request<
-  Record<string, unknown>,
-  Record<string, unknown>,
-  { username: string; password: string }
->;
+import type UserCredencialAlias from "../../server/types";
 
 export const loginUser = async (
   req: UserCredencialAlias,
