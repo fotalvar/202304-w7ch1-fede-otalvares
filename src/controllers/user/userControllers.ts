@@ -1,7 +1,7 @@
 import { type Response, type NextFunction } from "express";
 import jwt, { type JwtPayload } from "jsonwebtoken";
-import RobotError from "../../routers/RobotError";
-import { User } from "../../database/user/User";
+import RobotError from "../../routers/RobotError.js";
+import { User } from "../../database/user/User.js";
 import bcrypt from "bcryptjs";
 import type UserCredencialAlias from "../../server/types";
 
