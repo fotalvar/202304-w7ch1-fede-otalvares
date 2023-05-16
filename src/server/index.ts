@@ -14,6 +14,7 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:5173",
   "https://202304-w7ch1-fede-otalvares-front.netlify.app/",
+  "https://202304-w7ch1-fede-otalvares-front.netlify.app/robots",
 ];
 
 const corsOptions: cors.CorsOptions = {
@@ -21,6 +22,11 @@ const corsOptions: cors.CorsOptions = {
 };
 
 app.use(cors(corsOptions));
+
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  next();
+});
 
 app.disable("x-powered-by");
 
