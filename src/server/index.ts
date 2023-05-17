@@ -13,7 +13,7 @@ const app = express();
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://202304-w7ch1-fede-otalvares-front.netlify.app/",
+  "https://202304-w7ch1-fede-otalvares-front.netlify.app",
   "https://202304-w7ch1-fede-otalvares-front.netlify.app/robots",
 ];
 
