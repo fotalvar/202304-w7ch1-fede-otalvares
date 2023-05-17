@@ -6,7 +6,7 @@ import {
 
 const robotsRouter = Router();
 
-robotsRouter.get("/", getRobots);
+robotsRouter.get("/robots", getRobots);
 
 robotsRouter.get("/:idRobot", getRobot);
 
